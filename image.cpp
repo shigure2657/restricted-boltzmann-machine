@@ -6,6 +6,12 @@
 using namespace cv;
 using namespace std;
 
+#ifdef _DEBUG
+#pragma comment(lib, "opencv_world4120d.lib")
+#else
+#pragma comment(lib, "opencv_world4120.lib")
+#endif
+
 int main(int argc, char **argv){
 	// 画像の読み込み
 	const int size= 50;
@@ -50,4 +56,5 @@ int main(int argc, char **argv){
 	
 	// 復元画像の保存
 	imwrite("reconstruct.png", bin_img);
+
 }
