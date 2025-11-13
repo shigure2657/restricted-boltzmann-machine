@@ -109,7 +109,7 @@ std::vector<int> RBM::get_sample(const std::vector<float> &prob)
 	return sample;
 }
 
-void RBM::train(const vector<int> &visible0, const float rate)
+void RBM::train(const std::vector<int>& visible0, const float rate)
 {
 	// サンプルの計算
 	auto prob0 = get_probability_hidden(visible0);
@@ -144,6 +144,7 @@ std::vector<int> RBM::get_reconstruction(const std::vector<int> &visible)
 	auto hidden = get_sample(get_probability_hidden(visible));
 	return get_sample(get_probability_visible(hidden));
 }
+
 
 
 
